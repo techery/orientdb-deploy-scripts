@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
+########################################
+# TASK
+# Create a script that accepts as command line argument path to directory with migrations
+# and executes them by concatenating in a string and passing
+# it to orientdb command line script console.sh
+# example ./bin/orientdb-migrate database/migrations/11-01-2016/comments-as-edge/
+# Be sure to correctly configure .env
 
-# get home dit
+# get home dir
 PRGDIR=`dirname "$0"`
 HOME_DIR=`cd "$PRGDIR/.." ; pwd`
 

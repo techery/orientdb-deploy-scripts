@@ -3,51 +3,70 @@
 * Run console.sh script
 * Connect to database
 
-**CONNECT remote:host/dbname user password**
+```
+CONNECT remote:host/dbname user password
+```
 
 
 ## Working with classes (vertexes and edges)
 
-list of existing classes
+* list of existing classes
 
-**LIST CLASSES**
+```
+LIST CLASSES
+```
 
-create new class:
+* create new class:
+
 ```sql
 CREATE CLASS <class> [EXTENDS <super-class>] [CLUSTER <clusterId>*] [CLUSTERS <total-cluster-number>] [ABSTRACT]**
 ```
 
-create new class as Vertex
+* create new class as Vertex
 
-**CREATE CLASS TestClass EXTENDS V**
+```
+CREATE CLASS TestClass EXTENDS V
+```
 
-create new class as edge
+* create new class as edge
 
-**CREATE CLASS TestClass EXTENDS E**
+```
+CREATE CLASS TestClass EXTENDS E
+```
 
-delete class
+* delete class
 
-**DROP CLASS TestClass**
+```
+DROP CLASS TestClass
+```
 
-alter class name
+* alter class name
 
-**ALTER CLASS TestClass NAME TestClassNew**
+```
+ALTER CLASS TestClass NAME TestClassNew
+```
 
-add cluster (automatically creates it)
+* add cluster (automatically creates it)
 
-**ALTER CLASS TestClass ADDCLUSTER TestCluster**
+```
+ALTER CLASS TestClass ADDCLUSTER TestCluster
+```
 
-remove cluster
+* remove cluster
 
-**ALTER CLASS TestClassNew REMOVECLUSTER TestCluster**
+```
+ALTER CLASS TestClassNew REMOVECLUSTER TestCluster
+```
 
-show class info
+* show class info
 
-**INFO CLASS TestClass**
+```
+INFO CLASS TestClass
+```
 
 ## Working with class properties
 
-create property
+* create property
 
 ```sql
 CREATE PROPERTY <class>.<property> <type> [<linked-type>|<linked-class>] [UNSAFE]**
@@ -58,30 +77,39 @@ embeddedlist, embeddedset, embeddedmap, link, linklist, linkset, linkmap, byte
 more on properties types http://orientdb.com/docs/last/-Create-Property.html
 
 
-**CREATE PROPERTY TestClass.name STRING**
-
-**CREATE PROPERTY TestClass.tags EMBEDDEDLIST STRING**
-
-remove property
-
-```sql
-DROP PROPERTY <class>.<property>**
+```
+CREATE PROPERTY TestClass.name STRING
 ```
 
-**DROP PROPERTY TestClass.tags**
+```
+CREATE PROPERTY TestClass.tags EMBEDDEDLIST STRING
+```
 
+* remove property
 
-alter property
+```sql
+DROP PROPERTY <class>.<property>
+```
+
+```
+DROP PROPERTY TestClass.tags
+```
+
+* alter property
 
 more http://orientdb.com/docs/last/SQL-Alter-Property.html
 
-change name
+* change name
 
-**ALTER PROPERTY TestClass.name NAME fullname**
+```
+ALTER PROPERTY TestClass.name NAME fullname
+```
 
 set mandatory
 
-**ALTER PROPERTY TestClass.name MANDATORY TRUE**
+```
+ALTER PROPERTY TestClass.name MANDATORY TRUE
+```
 
 
 ## Working with relaitions
