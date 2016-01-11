@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# get home dit
+PRGDIR=`dirname "$0"`
+HOME_DIR=`cd "$PRGDIR/.." ; pwd`
+
+source $HOME_DIR/.env
+
+CONNECT_SQL='SET echo TRUE; CONNECT remote:{{host}}/{{db_name}} {{db_user}} {{db_password}};'
+CONNECT_SQL=$(echo "$CONNECT_SQL" | sed -e 's/{{host}}/'$DB_HOST'/g' -e 's/{{db_name}}/'$DB_DATABASE'/g' -e 's/{{db_user}}/'$DB_USERNAME'/g' \
+            -e 's/{{db_password}}/'$DB_PASSWORD'/g')
+
+SQL=''
+
+for f in $1*.sql
+do
+    SQL_IN_FILE=$(<$f)
+    SQL=$SQL$SQL_IN_FILE
+
+done
+
+echo 'Execution sql: '$SQL;
+
+$CONSOLE_FILE_PATH $CONNECT_SQL$SQL
