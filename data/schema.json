@@ -1,0 +1,1362 @@
+{
+    "info": {
+        "name": "worldventures",
+        "default-cluster-id": 3,
+        "exporter-version": 11,
+        "engine-version": "2.1-rc4",
+        "engine-build": "UNKNOWN@r; 2015-06-17 14:47:11+0000",
+        "storage-config-version": 14,
+        "schema-version": 4,
+        "mvrbtree-version": 3,
+        "schemaRecordId": "#0:1",
+        "indexMgrRecordId": "#0:2"
+    },
+    "clusters": [
+        {
+            "name": "internal",
+            "id": 0
+        },
+        {
+            "name": "index",
+            "id": 1
+        },
+        {
+            "name": "manindex",
+            "id": 2
+        },
+        {
+            "name": "default",
+            "id": 3
+        },
+        {
+            "name": "orole",
+            "id": 4
+        },
+        {
+            "name": "ouser",
+            "id": 5
+        },
+        {
+            "name": "ofunction",
+            "id": 6
+        },
+        {
+            "name": "oschedule",
+            "id": 7
+        },
+        {
+            "name": "orids",
+            "id": 8
+        },
+        {
+            "name": "v",
+            "id": 9
+        },
+        {
+            "name": "e",
+            "id": 10
+        },
+        {
+            "name": "_studio",
+            "id": 11
+        },
+        {
+            "name": "wvuser",
+            "id": 12
+        },
+        {
+            "name": "contactinfo",
+            "id": 13
+        },
+        {
+            "name": "location",
+            "id": 14
+        },
+        {
+            "name": "personalinfo",
+            "id": 15
+        },
+        {
+            "name": "userpreference",
+            "id": 16
+        },
+        {
+            "name": "acl",
+            "id": 17
+        },
+        {
+            "name": "externalsocialconnection",
+            "id": 18
+        },
+        {
+            "name": "image",
+            "id": 19
+        },
+        {
+            "name": "tripimage",
+            "id": 20
+        },
+        {
+            "name": "dreamtrip",
+            "id": 21
+        },
+        {
+            "name": "bucketlistitem",
+            "id": 22
+        },
+        {
+            "name": "sponsors",
+            "id": 23
+        },
+        {
+            "name": "friendswith",
+            "id": 24
+        },
+        {
+            "name": "follows",
+            "id": 25
+        },
+        {
+            "name": "unsubscribed",
+            "id": 26
+        },
+        {
+            "name": "bucketlist",
+            "id": 27
+        },
+        {
+            "name": "owns",
+            "id": 28
+        },
+        {
+            "name": "ismemberof",
+            "id": 29
+        },
+        {
+            "name": "ownsgroup",
+            "id": 30
+        },
+        {
+            "name": "ownsacltree",
+            "id": 31
+        },
+        {
+            "name": "post",
+            "id": 32
+        },
+        {
+            "name": "haspost",
+            "id": 33
+        },
+        {
+            "name": "postvisibleby",
+            "id": 34
+        },
+        {
+            "name": "sentfriendrequest",
+            "id": 35
+        },
+        {
+            "name": "testedge",
+            "id": 36
+        },
+        {
+            "name": "testvertex",
+            "id": 37
+        },
+        {
+            "name": "blockedrequest",
+            "id": 38
+        },
+        {
+            "name": "rejectedrequest",
+            "id": 39
+        },
+        {
+            "name": "address",
+            "id": 40
+        },
+        {
+            "name": "contactnumber",
+            "id": 41
+        },
+        {
+            "name": "subscription",
+            "id": 42
+        },
+        {
+            "name": "class",
+            "id": 43
+        },
+        {
+            "name": "hasbucketlist",
+            "id": 44
+        },
+        {
+            "name": "containsbucketlistitem",
+            "id": 45
+        },
+        {
+            "name": "bucketlistitemvisibleby",
+            "id": 46
+        },
+        {
+            "name": "badge",
+            "id": 47
+        },
+        {
+            "name": "rewardslimititem",
+            "id": 48
+        }
+    ],
+    "schema": {
+        "version": 1,
+        "classes": [
+            {
+                "name": "ACL",
+                "default-cluster-id": 17,
+                "cluster-ids": [
+                    17
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "predefined",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Address",
+                "default-cluster-id": 40,
+                "cluster-ids": [
+                    40
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "addressLine1",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "addressLine2",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "city",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "postalCode",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "state",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Badge",
+                "default-cluster-id": 47,
+                "cluster-ids": [
+                    47
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "BlockedRequest",
+                "default-cluster-id": 38,
+                "cluster-ids": [
+                    38
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "createdDate",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "BucketList",
+                "default-cluster-id": 27,
+                "cluster-ids": [
+                    27
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "category",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "description",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "tags",
+                        "type": "EMBEDDEDSET",
+                        "linked-type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "time",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "BucketListItem",
+                "default-cluster-id": 22,
+                "cluster-ids": [
+                    22
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "externalID",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "location",
+                        "type": "EMBEDDED",
+                        "linked-class": "Location",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "BucketListItemVisibleBy",
+                "default-cluster-id": 46,
+                "cluster-ids": [
+                    46
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "ContactInfo",
+                "default-cluster-id": 13,
+                "cluster-ids": [
+                    13
+                ],
+                "cluster-selection": "default",
+                "properties": [
+                    {
+                        "name": "addresses",
+                        "type": "EMBEDDEDLIST",
+                        "linked-class": "Address",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "contactNumbers",
+                        "type": "EMBEDDEDLIST",
+                        "linked-class": "ContactNumber",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "phone",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "website",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "ContactNumber",
+                "default-cluster-id": 41,
+                "cluster-ids": [
+                    41
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "number",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "ContainsBucketListItem",
+                "default-cluster-id": 45,
+                "cluster-ids": [
+                    45
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "DreamTrip",
+                "default-cluster-id": 21,
+                "cluster-ids": [
+                    21
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "endDate",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "externalID",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "location",
+                        "type": "EMBEDDED",
+                        "linked-class": "Location",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "startDate",
+                        "type": "DATE",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "E",
+                "default-cluster-id": 10,
+                "cluster-ids": [
+                    10
+                ],
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "ExternalSocialConnection",
+                "default-cluster-id": 18,
+                "cluster-ids": [
+                    18
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "accessToken",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "expireTime",
+                        "type": "LONG",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "imageUrl",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "profileUrl",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "refreshToken",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "secret",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Follows",
+                "default-cluster-id": 25,
+                "cluster-ids": [
+                    25
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "FriendsWith",
+                "default-cluster-id": 24,
+                "cluster-ids": [
+                    24
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "createdDate",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "HasBucketList",
+                "default-cluster-id": 44,
+                "cluster-ids": [
+                    44
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "HasPost",
+                "default-cluster-id": 33,
+                "cluster-ids": [
+                    33
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "postDate",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Image",
+                "default-cluster-id": 19,
+                "cluster-ids": [
+                    19
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "IsMemberOf",
+                "default-cluster-id": 29,
+                "cluster-ids": [
+                    29
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "Location",
+                "default-cluster-id": 14,
+                "cluster-ids": [
+                    14
+                ],
+                "cluster-selection": "default",
+                "properties": [
+                    {
+                        "name": "city",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "country",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "latitude",
+                        "type": "DECIMAL",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "longitude",
+                        "type": "DECIMAL",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "OFunction",
+                "default-cluster-id": 6,
+                "cluster-ids": [
+                    6
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "code",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "idempotent",
+                        "type": "BOOLEAN",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "language",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "parameters",
+                        "type": "EMBEDDEDLIST",
+                        "linked-type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "OIdentity",
+                "default-cluster-id": -1,
+                "cluster-ids": [
+                    -1
+                ],
+                "abstract": true,
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "ORIDs",
+                "default-cluster-id": 8,
+                "cluster-ids": [
+                    8
+                ],
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "ORestricted",
+                "default-cluster-id": -1,
+                "cluster-ids": [
+                    -1
+                ],
+                "abstract": true,
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "_allow",
+                        "type": "LINKSET",
+                        "linked-class": "OIdentity",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "_allowDelete",
+                        "type": "LINKSET",
+                        "linked-class": "OIdentity",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "_allowRead",
+                        "type": "LINKSET",
+                        "linked-class": "OIdentity",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "_allowUpdate",
+                        "type": "LINKSET",
+                        "linked-class": "OIdentity",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "ORole",
+                "default-cluster-id": 4,
+                "cluster-ids": [
+                    4
+                ],
+                "super-class": "OIdentity",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "inheritedRole",
+                        "type": "LINK",
+                        "linked-class": "ORole",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "mode",
+                        "type": "BYTE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "rules",
+                        "type": "EMBEDDEDMAP",
+                        "linked-type": "BYTE",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "OSchedule",
+                "default-cluster-id": 7,
+                "cluster-ids": [
+                    7
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "arguments",
+                        "type": "EMBEDDEDMAP",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "function",
+                        "type": "LINK",
+                        "mandatory": true,
+                        "not-null": true,
+                        "linked-class": "OFunction",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "default"
+                    },
+                    {
+                        "name": "rule",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "default"
+                    },
+                    {
+                        "name": "start",
+                        "type": "BOOLEAN",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "starttime",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "status",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "OTriggered",
+                "default-cluster-id": -1,
+                "cluster-ids": [
+                    -1
+                ],
+                "abstract": true,
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "OUser",
+                "default-cluster-id": 5,
+                "cluster-ids": [
+                    5
+                ],
+                "super-class": "OIdentity",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "password",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "default"
+                    },
+                    {
+                        "name": "roles",
+                        "type": "LINKSET",
+                        "linked-class": "ORole",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "status",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "not-null": true,
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Owns",
+                "default-cluster-id": 28,
+                "cluster-ids": [
+                    28
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "OwnsACLTree",
+                "default-cluster-id": 31,
+                "cluster-ids": [
+                    31
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "OwnsGroup",
+                "default-cluster-id": 30,
+                "cluster-ids": [
+                    30
+                ],
+                "super-class": "E",
+                "cluster-selection": "default"
+            },
+            {
+                "name": "PersonalInfo",
+                "default-cluster-id": 15,
+                "cluster-ids": [
+                    15
+                ],
+                "cluster-selection": "default",
+                "properties": [
+                    {
+                        "name": "dateOfBirth",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "dateOfEnroll",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "memberSince",
+                        "type": "DATETIME",
+                        "readonly": true,
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Post",
+                "default-cluster-id": 32,
+                "cluster-ids": [
+                    32
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "externalID",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "PostVisibleBy",
+                "default-cluster-id": 34,
+                "cluster-ids": [
+                    34
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "RejectedRequest",
+                "default-cluster-id": 39,
+                "cluster-ids": [
+                    39
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "createdDate",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "RewardsLimitItem",
+                "default-cluster-id": 48,
+                "cluster-ids": [
+                    48
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "add",
+                        "type": "INTEGER",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "multiply",
+                        "type": "DOUBLE",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "SentFriendRequest",
+                "default-cluster-id": 35,
+                "cluster-ids": [
+                    35
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "createdDate",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Sponsors",
+                "default-cluster-id": 23,
+                "cluster-ids": [
+                    23
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "createdDate",
+                        "type": "DATETIME",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Subscription",
+                "default-cluster-id": 42,
+                "cluster-ids": [
+                    42
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "description",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "expireDate",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "group",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "id",
+                        "type": "INTEGER",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "startDate",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "status",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "TestEdge",
+                "default-cluster-id": 36,
+                "cluster-ids": [
+                    36
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "age",
+                        "type": "INTEGER",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "TestVertex",
+                "default-cluster-id": 37,
+                "cluster-ids": [
+                    37
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "city",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "TripImage",
+                "default-cluster-id": 20,
+                "cluster-ids": [
+                    20
+                ],
+                "oversize": 0.0,
+                "super-class": "Image",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "externalID",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "thumbnail",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "title",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "url",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "Unsubscribed",
+                "default-cluster-id": 26,
+                "cluster-ids": [
+                    26
+                ],
+                "super-class": "E",
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "UserPreference",
+                "default-cluster-id": 16,
+                "cluster-ids": [
+                    16
+                ],
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "defaultACL",
+                        "type": "LINK",
+                        "linked-class": "ACL",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "language",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "V",
+                "default-cluster-id": 9,
+                "cluster-ids": [
+                    9
+                ],
+                "oversize": 2.0,
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "WVUser",
+                "default-cluster-id": 12,
+                "cluster-ids": [
+                    12
+                ],
+                "oversize": 0.0,
+                "super-class": "V",
+                "cluster-selection": "round-robin",
+                "properties": [
+                    {
+                        "name": "badges",
+                        "type": "EMBEDDEDLIST",
+                        "linked-class": "Badge",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "bucketList",
+                        "type": "LINKLIST",
+                        "linked-class": "BucketList",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "companyName",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "contactInfo",
+                        "type": "EMBEDDED",
+                        "linked-class": "ContactInfo",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "customerTypeID",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "email",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "enrollDate",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "externalAuth",
+                        "type": "EMBEDDEDMAP",
+                        "linked-class": "ExternalSocialConnection",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "externalID",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "firstLastName",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "firstMiddleLastName",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "gender",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "locale",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "location",
+                        "type": "EMBEDDED",
+                        "linked-class": "Location",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "maturityDate",
+                        "type": "DATE",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "memberType",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "middleName",
+                        "type": "STRING",
+                        "collate": "ci"
+                    },
+                    {
+                        "name": "personalInfo",
+                        "type": "EMBEDDED",
+                        "linked-class": "PersonalInfo",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "profilePicUrl",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "profileThumbnail",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "rank",
+                        "type": "STRING",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "rankID",
+                        "type": "INTEGER",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "rewardsLimit",
+                        "type": "EMBEDDEDMAP",
+                        "linked-class": "RewardsLimitItem",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "status",
+                        "type": "BOOLEAN",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "subscriptions",
+                        "type": "EMBEDDEDLIST",
+                        "linked-class": "Subscription",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "userID",
+                        "type": "STRING",
+                        "mandatory": true,
+                        "readonly": true,
+                        "not-null": true,
+                        "collate": "default"
+                    },
+                    {
+                        "name": "userPreference",
+                        "type": "EMBEDDED",
+                        "linked-class": "UserPreference",
+                        "collate": "default"
+                    },
+                    {
+                        "name": "wallBackgroundUrl",
+                        "type": "STRING",
+                        "collate": "default"
+                    }
+                ]
+            },
+            {
+                "name": "_studio",
+                "default-cluster-id": 11,
+                "cluster-ids": [
+                    11
+                ],
+                "cluster-selection": "round-robin"
+            },
+            {
+                "name": "class",
+                "default-cluster-id": 43,
+                "cluster-ids": [
+                    43
+                ],
+                "cluster-selection": "round-robin"
+            }
+        ]
+    }
+}

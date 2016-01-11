@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+########################################
+# TASK
+# Create a script that drops and creates database specified in .env
+# by passing schema file to orientdb command line script console.sh
+# Be sure to correctly configure .env
+
+# get home dir
+PRGDIR=`dirname "$0"`
+HOME_DIR=`cd "$PRGDIR/.." ; pwd`
+
+source $HOME_DIR/.env
+
+$CONSOLE_FILE_PATH "DROP DATABASE remote:$DB_HOST/$DB_DATABASE $DB_USERNAME $DB_PASSWORD;"
+
+$CONSOLE_FILE_PATH "CREATE DATABASE remote:$DB_HOST/$DB_DATABASE $DB_USERNAME $DB_PASSWORD plocal;"
+
+$CONSOLE_FILE_PATH "CONNECT remote:"$DB_HOST"/"$DB_DATABASE $DB_USERNAME $DB_PASSWORD"; $DROP_COMMAND $CREATE_COMMAND IMPORT DATABASE "$SCHEMA_FILE_PATH
