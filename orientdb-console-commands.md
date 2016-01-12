@@ -157,6 +157,34 @@ SELECT EXPAND( OUT() ) FROM Person WHERE name='Luca'
 
 ```
 
+# Aggregate functions
+
+* Shortest path (returns vertices num)
+
+```
+SELECT shortestPath(#12:0, #12:1, 'both', 'FriendsWith')
+```
+
+* Get all user friends on level 2
+
+```
+SELECT FROM (TRAVERSE both('FriendsWith') FROM #12:0 WHILE $depth<=2) WHERE $depth = 2 AND @rid NOT IN (SELECT both('FriendsWith') FROM #12:0)
+```
+
+* Get user posts list with likes and comments count
+
+```
+select in('Likes'), in('Comments') from Post WHERE @rid IN (Select out('HasPost') FROM #12:0)
+```
+
+* Get N posts with most likes or comments count from friends for the last day
+
+
+Get all posts with likes count expanded:
+
+```
+select expand(inE('Likes')) from Post WHERE @rid IN (Select out('HasPost') FROM #12:0);
+```
 
 
 
