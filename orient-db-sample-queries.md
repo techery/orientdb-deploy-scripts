@@ -16,7 +16,7 @@ SELECT FROM WVUser WHERE @rid > #12:200000 LIMIT 1
 
 ## Add post and bind to user
 
-* use javascript function
+* use javascript function (add new function with corresponding params to OrientDb)
 
 ```
 var db = orient.getDatabase();
@@ -28,12 +28,18 @@ v.setProperty('short_description', shortDesc);
 v.setProperty('full_description', fullDesc);
 v.setProperty('image', image);
 
-var e = gdb.addEdge('class:HasPost', gdb.getVertex(userRid), v, '1');
+var e = gdb.addEdge('class:HasPost', gdb.getVertex(userRid), v, 'HasPost');
 
 
 gdb.commit();
 
 return v;
+```
+
+* call example
+
+```
+SELECT functioName(params)
 ```
 
 * use batch script (via rest api or java api) http://orientdb.com/docs/2.1/SQL-batch.html
