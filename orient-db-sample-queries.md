@@ -27,6 +27,7 @@ v.setProperty('externalID',externalID);
 v.setProperty('short_description', shortDesc);
 v.setProperty('full_description', fullDesc);
 v.setProperty('image', image);
+v.setProperty('created_at', createDate);
 
 var e = gdb.addEdge('class:HasPost', gdb.getVertex(userRid), v, 'HasPost');
 
