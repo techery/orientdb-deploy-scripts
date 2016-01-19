@@ -14,7 +14,35 @@ SELECT classes[name='WVUser'].clusterIds FROM 0:1
 SELECT FROM WVUser WHERE @rid > #12:200000 LIMIT 1
 ```
 
-## Add post and bind to user
+## Fetch user feed
+
+
+* by friends
+
+```
+SELECT expand(both('FriendsWith').out('HasPost')) FROM #12:23 ORDER BY created_at DESC
+```
+
+* by circles
+
+1. fetch circles
+```
+SELECT @rid, name FROM (TRAVERSE out('OwnsGroup') FROM (SELECT out('OwnsAclTree') FROM #12:1))
+```
+
+2. fetch feed from circle
+
+```
+SELECT expand(in('IsMemberOf').out('HasPost')) from #17:4 ORDER BY created_at DESC LIMIT 50
+
+```
+3. fetch from current and all inherited circles
+
+```
+SELECT expand(in('IsMemberOf').out('HasPost')) from (TRAVERSE out('OwnsGroup') FROM #17:4) ORDER BY created_at DESC
+```
+
+## Create post and bind to user
 
 * use javascript function (add new function with corresponding params to OrientDb)
 
