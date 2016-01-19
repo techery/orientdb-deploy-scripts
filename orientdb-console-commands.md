@@ -174,7 +174,7 @@ SELECT FROM (TRAVERSE both('FriendsWith') FROM #12:0 WHILE $depth<=2) WHERE $dep
 * Get user posts list with likes and comments count
 
 ```
-select in('Likes'), in('Comments') from Post WHERE @rid IN (Select out('HasPost') FROM #12:0)
+select in('Likes').size(), in('Comments').size() from Post WHERE @rid IN (Select out('HasPost') FROM #12:0)
 ```
 
 * Get N posts with most likes or comments count from friends for the last day
