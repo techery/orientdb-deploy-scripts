@@ -82,6 +82,48 @@ COMMIT
 return $edge
 ```
 
+## Add friend
+
+
+* use javascript function (add new function with corresponding params to OrientDb: fromRid, ,toRid)
+
+```
+var gdb = orient.getGraph();
+
+var fromUser=gdb.getVertex(fromRid);
+var toUser=gdb.getVertex(toRid);
+
+if (!fromUser || !toUser){
+    return 'User does not exists';
+}
+
+var friend = gdb.command('sql','select expand(both("FriendsWith")) from ' + fromRid);
+
+
+for(i=1;i<friend.length;i++){
+  var id = friend[i].getRecord().field('@rid');
+
+  if (toRid == id) {
+    return 'Already friends';
+  }
+
+}
+
+
+var e = gdb.addEdge('class:FriendsWith', fromUser, toUser, 'FriendsWith');
+
+gdb.commit();
+
+return e;
+```
+
+* call example
+
+```
+SELECT addFriend(fromRid, toRid)
+```
+
+
 ## Add like to known post
 
  ```
